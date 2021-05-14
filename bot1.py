@@ -132,7 +132,7 @@ def alg(user_info, us_id):
                     best_recipe = di['recipe']
                     best_kkal = di['kkal']
     if best_name == 'none' :
-        user_recipe = 'Прости, в моей библиотеке пока нет рецпта под такой запрос!'
+        user_recipe = 'Прости, в моей библиотеке пока нет рецепта под такой запрос!'
     else :
         user_recipe = best_name + '\nРецепт: ' + best_recipe + '\nКалорийность на 100 г: ' + best_kkal
     return user_recipe
