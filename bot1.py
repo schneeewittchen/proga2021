@@ -10,7 +10,7 @@ user_state = {}
 users_info = {}
 
 
-@bot.message_handler(commands=['reg'])
+@bot.message_handler(commands=['start'])
 def command_reg(message):
     us_id = message.chat.id
     markup_inline = types.InlineKeyboardMarkup()
