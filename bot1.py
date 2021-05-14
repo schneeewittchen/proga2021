@@ -112,6 +112,7 @@ def alg(user_info, us_id):
     with open('recipes.csv', 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f, delimiter=';')
         best_match = 0
+        best_name = 'none'
         for di in reader:
             product_match = 0
             for item in user_products:
@@ -130,9 +131,11 @@ def alg(user_info, us_id):
                     best_name = di['name']
                     best_recipe = di['recipe']
                     best_kkal = di['kkal']
-    user_recipe = best_name + '\nРецепт: ' + best_recipe + '\nКалорийность на 100 г: ' + best_kkal
+    if best_name == 'none' :
+        user_recipe = 'Прости, в моей библиотеке пока нет рецпта под такой запрос!'
+    else :
+        user_recipe = best_name + '\nРецепт: ' + best_recipe + '\nКалорийность на 100 г: ' + best_kkal
     return user_recipe
-
 
 @bot.message_handler(commands=['kkal'])
 def answer(message):
